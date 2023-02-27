@@ -1,0 +1,17 @@
+{
+    "serverlessConsole.services": [
+        {
+            "type": "cloudformation",
+            "title": "telegram bot",
+            "timeOffsetInMs": 0,
+            "awsProfile": "tickets",
+            "stacks": [
+                {
+                    "region": "us-east-1",
+                    "stackName": "lambda-telegram-bot-dev",
+                    "stage": "dev"
+                }
+            ]
+        }
+    ]
+}

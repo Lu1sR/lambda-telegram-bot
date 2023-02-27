@@ -1,0 +1,27 @@
+org: lrodriguez
+app: lambda-telegram-bot
+service: lambda-telegram-bot
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: us-east-1
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Resource: '*'
+          Action: 's3:*'
+        - Effect: 'Allow'
+          Resource: '*'
+          Action: 'sqs:*'
+
+functions:
+  hello:
+    handler: handler.hello
+    url: true
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
